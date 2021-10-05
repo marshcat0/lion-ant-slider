@@ -1,30 +1,32 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </div>
-  <router-view />
+  <Slider
+    v-model:activeIndex="activeIndex"
+    :images="images"
+    :stepInterval="stepInterval"
+    :onClickNext="onClickNext"
+    :onClickPrev="onClickPrev"
+  />
 </template>
 
-<style lang="less">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<script lang="ts" setup>
+import Slider from "@/components/Slider/index.vue";
+import { ref } from "vue";
 
-#nav {
-  padding: 30px;
+const activeIndex = ref(0);
+const images = [
+  "http://fakeimg.pl/300/?text=1",
+  "http://fakeimg.pl/300/?text=2",
+  "http://fakeimg.pl/300/?text=3",
+  "http://fakeimg.pl/300/?text=4",
+  "http://fakeimg.pl/300/?text=5",
+];
+const stepInterval = 3000;
+const onClickNext = () => {
+  console.log("next");
+};
+const onClickPrev = () => {
+  console.log("prev");
+};
+</script>
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
-}
-</style>
+<style scoped lang="less"></style>
