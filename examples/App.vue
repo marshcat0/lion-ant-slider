@@ -9,7 +9,8 @@
 </template>
 
 <script lang="ts" setup>
-import Slider from "@/components/Slider/index.vue";
+import { Slider } from "lion-ant-slider";
+import "lion-ant-slider/lib/slider.css";
 import { ref } from "vue";
 
 const activeIndex = ref(0);

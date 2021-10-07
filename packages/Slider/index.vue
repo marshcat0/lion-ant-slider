@@ -15,24 +15,22 @@
       />
     </div>
   </div>
-  <span @click="next">下一个</span>
-  <span @click="prev">上一个</span>
 </template>
 <script setup lang="ts">
 import { onMounted, onUnmounted, toRef } from "vue";
 const props = withDefaults(
   defineProps<{
     // 受控模式新增的prop
-    activeIndex: number;
+    activeIndex?: number;
     // 轮播的图片地址
     images: string[];
     // 轮番展示的图片数
     displayNumber?: number;
     // 每次轮播的时间间隔
-    stepInterval: number;
+    stepInterval?: number;
     // 点击事件
-    onClickNext: (index: number) => void;
-    onClickPrev: (index: number) => void;
+    onClickNext?: (index: number) => void;
+    onClickPrev?: (index: number) => void;
   }>(),
   {
     activeIndex: 0,

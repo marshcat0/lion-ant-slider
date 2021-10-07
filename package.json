@@ -1,15 +1,33 @@
 {
-  "name": "slider",
+  "name": "lion-ant-slider",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
+  "description": "",
+  "keywords": [],
+  "author": "https://github.com/marshcat0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/marshcat0/lion-ant-slider"
+  },
+  "main": "lib/slider.umd.js",
+  "unpkg": "lib/slider.umd.min.js",
+  "prepublishOnly": "npm run lib",
+  "files": [
+    "lib"
+  ],
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "lib": "vue-cli-service build --target lib --name slider --dest lib ./packages/index.ts"
+  },
+  "peerDependencies": {
+    "vue": "^3.2.0"
   },
   "dependencies": {
     "core-js": "^3.6.5",
-    "vue": "^3.2.19"
+    "vue": "^3.2.19",
+    "lion-ant-slider": "^0.1.0"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^4.18.0",
