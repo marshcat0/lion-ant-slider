@@ -1,5 +1,12 @@
 # HomeWork
 
+## 使用方法
+
+```js
+import { Slider } from "lion-ant-slider";
+import "lion-ant-slider/lib/slider.css";
+```
+
 ## 设计要求
 
 1. 设计一个轮播组件
